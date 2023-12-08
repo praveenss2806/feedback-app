@@ -1,14 +1,12 @@
-import { useState } from "react";
+import Card from './shared/Card'
 
-const FeedbackItem = () => {
-    const [rating, setRating] = useState(10);
-    const [text, setText] = useState('Hello this is Praveen here!');
+const FeedbackItem = ({feedback}) => {
 
     return (
-        <div className="card">
-            <div className="num-display">{rating}</div>
-            <div className="text-display">{text}</div>
-        </div>
+        <Card>
+            <div className="num-display">{feedback.rating}</div>
+            <div className="text-display">{feedback.text}</div>
+        </Card>
     )
 }
 
