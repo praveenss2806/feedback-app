@@ -1,0 +1,42 @@
+import { useState } from 'react';
+import Button from './shared/Button'
+import Card from './shared/Card';
+
+const FeedbackForm = () => {
+    const [text, setText] = useState('')
+    const [btnDisabled, setBtnDisabled] = useState(true)
+    const [message, setMessage] = useState('')
+
+    const handleText = (e) => {
+        if(e.target.value === '') {
+            setBtnDisabled(true)
+            setMessage(null)
+        }
+        else if(e.target.value !== '' && e.target.value.trim().length < 10) {
+            setBtnDisabled(true)
+            setMessage('Review should be atleast 10 characters')
+        }
+        else {
+            setBtnDisabled(false)
+            setMessage(null)
+        }
+
+        setText(e.target.value)
+    }
+
+    return (
+        <Card>
+            <form>
+                <h2>How would you rate your service with us?</h2>
+                <div className='input-group'>
+                    <input type="text" placeholder='write reivew' value={text} onChange={handleText} />
+                    <Button type='submit' isDisabled={btnDisabled}>Send</Button>
+                </div>
+
+                {message && <div className='message'>{message}</div>}
+            </form>
+        </Card>
+    )
+}
+
+export default FeedbackForm
