@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid'
 import Header from './components/Header';
 import feedbackData from './data/FeedbackData';
 import FeedbackList from './components/FeedbackList';
@@ -17,11 +18,16 @@ const App = () => {
         }
     }
 
+    const addFeedback = (newFeed) => {
+        newFeed.id = uuidv4()
+        setFeedback([newFeed, ...feedback])
+    }
+
     return (
         <>
             <Header />
             <div className="container">
-                <FeedbackForm />
+                <FeedbackForm addFeedback={addFeedback}/>
                 <FeedbackStats feedback={feedback} />
                 <FeedbackList feedback={feedback} delFeedback={delFeedback} />
             </div>
