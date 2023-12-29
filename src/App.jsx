@@ -35,8 +35,8 @@ const App = () => {
                         <Route exact path='/' element = {
                             <>
                                 <FeedbackForm addFeedback={addFeedback}/>
-                                <FeedbackStats feedback={feedback} />
-                                <FeedbackList feedback={feedback} delFeedback={delFeedback} />
+                                <FeedbackStats />
+                                <FeedbackList delFeedback={delFeedback} />
                                 <AboutLink/>
                             </>
                         } />
