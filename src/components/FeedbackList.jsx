@@ -2,7 +2,7 @@ import FeedbackItem from "./FeedbackItem"
 import { useContext } from "react"
 import FeedbackContext from "../context/FeedbackContext"
 
-const FeedbackList = ({delFeedback}) => {
+const FeedbackList = () => {
     const {feedback} = useContext(FeedbackContext)
 
     if(!feedback || feedback.length ===0) {
@@ -12,7 +12,7 @@ const FeedbackList = ({delFeedback}) => {
     return (
         <>
             {feedback.map((fb) => {
-                return <FeedbackItem key={fb.id} feedback = {fb} handleDel={(id) => delFeedback(id)}/>
+                return <FeedbackItem key={fb.id} feedback = {fb} />
             })}
         </>
     )
