@@ -7,7 +7,7 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import About from './pages/About';
 import AboutLink from './components/AboutLink';
-
+import { FeedbackProvider } from './context/FeedbackContext';
 import { useState } from 'react';
 
 const App = () => {
@@ -27,22 +27,24 @@ const App = () => {
     }
 
     return (
-        <Router>
-            <Header />
-            <div className="container">
-                <Routes>
-                    <Route exact path='/' element = {
-                        <>
-                            <FeedbackForm addFeedback={addFeedback}/>
-                            <FeedbackStats feedback={feedback} />
-                            <FeedbackList feedback={feedback} delFeedback={delFeedback} />
-                            <AboutLink/>
-                        </>
-                    } />
-                    <Route path='/about' element = {<><About/></>}/>
-                </Routes>
-            </div>
-        </Router>
+        <FeedbackProvider>
+            <Router>
+                <Header />
+                <div className="container">
+                    <Routes>
+                        <Route exact path='/' element = {
+                            <>
+                                <FeedbackForm addFeedback={addFeedback}/>
+                                <FeedbackStats feedback={feedback} />
+                                <FeedbackList feedback={feedback} delFeedback={delFeedback} />
+                                <AboutLink/>
+                            </>
+                        } />
+                        <Route path='/about' element = {<><About/></>}/>
+                    </Routes>
+                </div>
+            </Router>
+        </FeedbackProvider>
     );
 };
 
