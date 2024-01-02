@@ -3,13 +3,13 @@ import { useContext } from "react"
 import FeedbackContext from "../context/FeedbackContext"
 
 const FeedbackList = () => {
-    const {feedback} = useContext(FeedbackContext)
+    const {feedback, isLoading} = useContext(FeedbackContext)
 
-    if(!feedback || feedback.length ===0) {
+    if(!isLoading && (!feedback || feedback.length ===0)) {
         return <p>No feedback yet</p>
     }
 
-    return (
+    return isLoading ? <h1>Loading...</h1>: (
         <>
             {feedback.map((fb) => {
                 return <FeedbackItem key={fb.id} feedback = {fb} />

@@ -1,24 +1,19 @@
 {
-  "feedback": [
-    {
-      "id": 1,
-      "rating": 10,
-      "text": "this is item 1 coming from the server"
-    },
-    {
-      "id": 2,
-      "rating": 9,
-      "text": "this is item 2 coming from the server"
-    },
-    {
-      "id": 3,
-      "rating": 8,
-      "text": "this is item 3 coming from the server"
-    },
-    {
-      "rating": "5",
-      "text": "this is from post",
-      "id": 4
-    }
-  ]
+    "feedback":[
+        {
+            "id":1,
+            "rating":10,
+            "text":"this is item 1 coming from the server"
+        },
+        {
+            "id":2,
+            "rating":9,
+            "text":"this is item 2 coming from the server"
+        },
+        {
+            "id":3,
+            "rating":8,
+            "text":"this is item 3 coming from the server"
+        }
+    ]
 }
