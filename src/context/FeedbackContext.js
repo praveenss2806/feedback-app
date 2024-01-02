@@ -16,7 +16,7 @@ export const FeedbackProvider = ({ children }) => {
     }, []);
 
     const fetchFeedback = async () => {
-        const res = await fetch('http://localhost:5000/feedback');
+        const res = await fetch('/feedback');
         const data = await res.json();
 
         setFeedback(data);
