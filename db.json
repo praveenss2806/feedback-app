@@ -1,24 +1,19 @@
 {
   "feedback": [
     {
-      "id": 1,
+      "text": "this is item 3 coming from the server - edited",
       "rating": 10,
-      "text": "this is item 1 coming from the server"
-    },
-    {
-      "id": 2,
-      "rating": 9,
-      "text": "this is item 2 coming from the server"
-    },
-    {
-      "id": 3,
-      "rating": 8,
-      "text": "this is item 3 coming from the server"
+      "id": 3
     },
     {
       "text": "this is praveen adding to db.json",
       "rating": 3,
       "id": 4
+    },
+    {
+      "text": "I want add new item praveen - rating 8",
+      "rating": 8,
+      "id": 5
     }
   ]
 }
